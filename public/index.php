@@ -12,10 +12,10 @@ if($page === 'home'){
     require'../app/views/home.php';
 }
 
-if($page === 'itemStats'){
+elseif($page === 'itemStats'){
   if(isset($_POST['itemId'])){
     require'../app/controller/itemStats.php';
   }else{
-    echo "pas d'item selctionner";
+    echo "Aucun item sélectionné ! ";
   }
 }
