@@ -1,3 +1,4 @@
+
 function itemChoice(itemName, itemId){
       $("#search").val(itemName);
       $("#itemId").val(itemId);
@@ -16,7 +17,7 @@ function itemChoice(itemName, itemId){
           {
             $.ajax({
               type: 'POST',
-              url: '../app/pages/search.php',
+              url: '../app/controller/search.php',
               data: 'search='+$("#search").val(),
 
               beforeSend:function(){

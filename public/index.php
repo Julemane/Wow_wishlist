@@ -1,9 +1,5 @@
 <?php
 
-require '../app/Autoloader.php';
-//gère l'autoloading
-App\Autoloader::register();
-
 if(isset($_GET['page'])){
   $page = $_GET['page'];
 } else{
@@ -13,5 +9,13 @@ if(isset($_GET['page'])){
 //Si param URL  = home
 //on envoi sur la vue Home
 if($page === 'home'){
-    require'../app/pages/home.php';
+    require'../app/views/home.php';
+}
+
+if($page === 'itemStats'){
+  if(isset($_POST['itemId'])){
+    require'../app/controller/itemStats.php';
+  }else{
+    echo "pas d'item selctionner";
+  }
 }

@@ -1,13 +1,13 @@
 <?php
-require_once('../Database.php');
+require_once('../model/ItemManager.php');
 
 if(!empty($_POST) && !empty($_POST['search']))
 {
   extract($_POST);
   $search = strip_tags($search);
 
-$db = new Database('wow-wishlist');
-$req = $db->query("SELECT id, item_name FROM items WHERE item_name LIKE '%$search%' ORDER BY id LIMIT 0,6");
+  $itemManager = new ItemManager();
+  $req = $itemManager->itemSearch($search);
 
   //Si on a un resultat
   if($req->rowCount()>0)
@@ -30,4 +30,4 @@ else
   echo '<h2>Aucun resultat</h2>';
 }
 
-?>
+
