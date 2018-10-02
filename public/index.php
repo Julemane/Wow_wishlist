@@ -1,4 +1,6 @@
 <?php
+require_once('../app/class/Item.php');
+require_once('../app/controller/ItemsController.php');
 
 if(isset($_GET['page'])){
   $page = $_GET['page'];
@@ -14,7 +16,8 @@ if($page === 'home'){
 
 elseif($page === 'itemStats'){
   if(isset($_POST['itemId'])){
-    require'../app/controller/itemStats.php';
+    getItemData($_POST['itemId']);
+
   }else{
     echo "Aucun item sélectionné ! ";
   }
