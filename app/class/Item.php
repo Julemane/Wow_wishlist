@@ -5,9 +5,11 @@ class Item{
       private $itemData;
       private $name;
       private $description;
-      private $icon;
       private $dropId;
       private $itemClass;
+      private $imageBaseUrl = 'http://media.blizzard.com/wow/icons/';
+      private $imageExt = '.jpg';
+      private $icon;
       public $itemUrl;
 
 
@@ -21,6 +23,7 @@ class Item{
         $this->name = $this->itemData['name'];
         $this->description = $this->itemData['description'];
         $this->itemClass = $this->itemData['itemClass'];
+        $this->icon = $this->itemData['icon'];
       }
       //return all Item's data
       public function getData(){
@@ -37,6 +40,11 @@ class Item{
 
       public function getItemClass(){
         return $this->itemClass;
+      }
+      //choose Icon size 18/36/56
+      public function getIcon($iconSize = 56){
+        $iconUrl =  strtolower('http://media.blizzard.com/wow/icons/'.$iconSize.'/'.$this->icon.$this->imageExt);
+        return $iconUrl;
       }
 
 

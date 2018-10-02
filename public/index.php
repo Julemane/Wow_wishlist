@@ -22,3 +22,6 @@ elseif($page === 'itemStats'){
     echo "Aucun item sélectionné ! ";
   }
 }
+
+
+
