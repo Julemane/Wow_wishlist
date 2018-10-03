@@ -1,0 +1,27 @@
+.item{
+}
+
+.itemImg{
+
+}
+
+.itemDetail{
+
+
+background-image: url("https://wow.zamimg.com/images/wow/tooltip.png");
+background-size: cover;
+color: rgb(255, 255, 255);
+font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+font-size: 12px;
+line-height: 17px;
+max-height: 1000000px;
+max-width: 300px;
+padding-top: 5px;
+padding-left:5px;
+margin-left: 10px;
+
+
+}
+.itemDetail ul{
+  list-style-type:none;
+}
