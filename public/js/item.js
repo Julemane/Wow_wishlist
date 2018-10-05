@@ -39,6 +39,7 @@ function itemInfo(statsItem){
     let itemDurability = document.getElementById("durability");
     let itemLvlRequiered = document.getElementById("itemLvlRequiered");
     let itemDescElt = document.createElement('li');
+    let itemBonusStatsElt = document.createElement('li');
 
 
     itemName.style.color = colorsItems[statsItem['quality']];
@@ -74,13 +75,28 @@ function itemInfo(statsItem){
     }
 
     //Gestion des stats Bonus
+    //Pour chaques valeurs de stats
     for(i=0;i<=statsItem['bonusStats'].length-1;i++){
-    var stat = statsItem['bonusStats'][i];
+      let stat = statsItem['bonusStats'][i];
+      //Conditionement de l'ecriture des stats
+      let statName = bonusStats[stat.stat];
+      if (statName =="Coup critique" ||
+          statName =="Hâte" ||
+          statName =="Maitrise" ||
+          statName == "Polyvalence" ||
+          statName == "Evitement"){
+            itemBonusStatsElt.innerHTML = '<li id="bonusStat_1"> Augmente votre score de' + ' ' + statName + ' de '  + '+' + stat.amount+'</li>';
+            itemArmor.insertAdjacentHTML('afterEnd',itemBonusStatsElt.innerHTML);
+            //coloration en vert des bonusStat_1
+            let bonusStatsColor = document.getElementById("bonusStat_1");
+            bonusStatsColor.style.color = "#1eff00";
+      }else{
+        //Affichage des autres stats bonus
+        itemBonusStatsElt.innerHTML = '<li id="bonusStat_2">+'+stat.amount + " " + statName;
+        itemArmor.insertAdjacentHTML('beforeEnd',itemBonusStatsElt.innerHTML);
+      }
 
-    var statName = bonusStats[stat.stat];
-    console.log("+"+stat.amount + " " + statName);
     }
-
 
 }
 
