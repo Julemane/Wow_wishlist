@@ -24,4 +24,10 @@ margin-left: 10px;
 }
 .itemDetail ul{
   list-style-type:none;
+  padding-left: 5px;
+  line-height: 150%;
+}
+
+.itemHover{
+  display:none;
 }

@@ -1,11 +1,11 @@
 
 <?php ob_start(); ?>
+
 <script>
 $(document).ready(function(){
 //$('#itemId').hide();
  let itemId = $('#itemId').text();
  ajaxGetStats(itemId);
-
 
 });
 
@@ -16,25 +16,22 @@ $(document).ready(function(){
   </div>
   <div class="itemDetail">
 
-    <h2 id="itemName"><?php echo $itemData['name'];?></h2>
+    <h4 id="itemName"><?php echo $itemData['name'];?></h4>
     <ul id=itemStats>
-      <li id="itemId"><?php echo $itemData['id'];?></li>
-        <?php
-        if(!empty($itemData['description'])){
-          ?>
-      <li><?php echo $itemData['description'] ;?></li>;
-          <?php
-        }?>
+      <li>Id de l'item :<span id="itemId"><?php echo $itemData['id'];?></span></li>
       <li id="itemLvl"></li>
       <li id="armor"></li>
       <li id="bind"></li>
       <li id="durability"></li>
       <li id="itemLvlRequiered"></li>
 
-
-
-
     </ul>
+  </div>
+  <div class="itemHover">
+    <ul>
+    <li></li>
+    </ul>
+
   </div>
 </div>
 <?php $content = ob_get_clean(); ?>
