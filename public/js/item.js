@@ -1,5 +1,21 @@
 const colorsItems = ["#9d9d9d", "#fff", "#1eff00", "#0081ff", "#c600ff", "#ff8000", "#e5cc80", "#0cf"];
 const bind = ["","Lié quand ramassé","Lié quand équipé"];
+const bonusStats = {
+  "3":"Agilité",
+  "4":"Force",
+  "5":"Intelligence",
+  "7":"Endurance",
+  "32":"Coup critique",
+  "36":"Hâte",
+  "40":"Polyvalence",
+  "49":"Maitrise",
+  "63":"Evitement",
+  "71":"Agilité ou Force ou Intelligence",
+  "72":"Agilité ou Force",
+  "73":"Agilité ou Intelligence",
+  "74":"Force ou Intelligence"
+}
+
 
 
 function ajaxGetStats(itemId){
@@ -12,8 +28,7 @@ function ajaxGetStats(itemId){
     item.send(null);
 }
 
-//Complete les Stats de l'item
-
+//Creation des stats de l'item
 function itemInfo(statsItem){
     let itemStatsUl = document.getElementById("itemStats");
     let itemName = document.getElementById("itemName");
@@ -24,7 +39,6 @@ function itemInfo(statsItem){
     let itemDurability = document.getElementById("durability");
     let itemLvlRequiered = document.getElementById("itemLvlRequiered");
     let itemDescElt = document.createElement('li');
-
 
 
     itemName.style.color = colorsItems[statsItem['quality']];
@@ -58,6 +72,15 @@ function itemInfo(statsItem){
       itemDescElt.innerHTML = '"' + statsItem['description'] + '"';
       itemDescElt.style.color = "#ffd100";
     }
+
+    //Gestion des stats Bonus
+    for(i=0;i<=statsItem['bonusStats'].length-1;i++){
+    var stat = statsItem['bonusStats'][i];
+
+    var statName = bonusStats[stat.stat];
+    console.log("+"+stat.amount + " " + statName);
+    }
+
 
 }
 

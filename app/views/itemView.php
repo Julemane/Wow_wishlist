@@ -24,12 +24,11 @@ $(document).ready(function(){
       <li id="bind"></li>
       <li id="durability"></li>
       <li id="itemLvlRequiered"></li>
-
     </ul>
   </div>
   <div class="itemHover">
     <ul>
-    <li></li>
+
     </ul>
 
   </div>
