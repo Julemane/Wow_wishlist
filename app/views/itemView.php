@@ -1,14 +1,6 @@
 
 <?php ob_start(); ?>
 
-<script>
-$(document).ready(function(){
- let itemId = $('#itemId').text();
- ajaxGetStats(itemId);
-
-});
-
-</script>
 <div class="item">
   <div class="itemImg">
    <img id='itemImg' src="<?php echo $itemIcon;?>">
@@ -26,6 +18,14 @@ $(document).ready(function(){
     </ul>
   </div>
 </div>
+
+<script>
+$(document).ready(function(){
+ let itemId = $('#itemId').text();
+ ajaxGetStats(itemId);
+});
+</script>
+
 <?php $content = ob_get_clean(); ?>
 
 

@@ -1,6 +1,8 @@
 <?php
+require_once('../app/class/Member.php');
 require_once('../app/class/Item.php');
 require_once('../app/controller/ItemsController.php');
+require_once('../app/controller/MemberController.php');
 
 if(isset($_GET['page'])){
   $page = $_GET['page'];
@@ -21,6 +23,12 @@ elseif($page === 'itemStats'){
   }else{
     echo "Aucun item sélectionné ! ";
   }
+}
+elseif($page === "creationUser"){
+  require'../app/views/newUserView.php';
+}
+elseif ($page ==="newUser"){
+  createMember("ptimimi","jimimi@hotmail.fr","120790");
 }
 
 
