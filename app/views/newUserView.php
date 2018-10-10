@@ -9,7 +9,7 @@
       <div class="form-group">
         <label for="mail">Votre Email</label>
         <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail" name="mail" required>
-        <small id="emailHelp" class="form-text text-muted">Votre email ne sera pas partager avec des tiers</small>
+        <small id="emailHelp" class="form-text text-muted">Votre email ne sera pas partagé avec des tiers</small>
       </div>
       <div class="form-group">
         <label for="password">Mot de passe</label>
