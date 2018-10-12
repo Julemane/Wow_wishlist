@@ -11,15 +11,16 @@ class Search
       extract($_POST);
       $search = strip_tags($search);
 
+
       $itemManager = new ItemManager();
       $req = $itemManager->itemSearch($search);
 
       //Si on a un resultat
-      if($req->rowCount()>0){
+      if(gettype($req) == 'object' && $req->rowCount()>0){
         while($data = $req->fetch(PDO::FETCH_OBJ))
         {
           ?>
-          <h2 onClick="itemChoice('<?php echo $data->item_name;?>','<?php echo $data->id;?>');"><?php echo $data->item_name;?></h2>
+          <h2 onClick="itemChoice('<?php echo addslashes($data->item_name);?>','<?php echo $data->id;?>');"><?php echo $data->item_name;?></h2>
           <?php
         }
       }

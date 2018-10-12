@@ -37,6 +37,19 @@ try{
   echo "tous les champs ne sont pas remplis !";
 
   }
+  elseif($page ==="login"){
+    if(isset($_POST['userPassword']) && !empty($_POST['userPassword'])
+      && isset($_POST['userNickname'])&& !empty($_POST['userNickname'])){
+
+        memberLogin($_POST['userNickname'],$_POST['userPassword'] );
+
+    }else{
+      echo"tous les champs ne sont pas remplis";
+
+    }
+
+
+  }
 }
 
 //Gestion des erreurs

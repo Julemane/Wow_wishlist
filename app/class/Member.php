@@ -7,9 +7,9 @@ class Member
   public $nickname;
   public $mail;
   public $password;
-  private $status;//Admin or member
+  public $status;
 
-   function __construct($nickname, $mail, $password){
+   public function memberCreation($nickname, $mail, $password){
     $req = new UserManager;
     $isAvailable = $req->checkNickname($nickname);
     //If nickname is  not Available
@@ -20,8 +20,30 @@ class Member
       $this->nickname = $nickname;
       $this->mail = $mail;
       $this->password = password_hash($password,PASSWORD_DEFAULT);
+      $this->status = 'Member';
+
+    }
+  }
+
+    public function memberAuth($nickname){
+      $req = new UserManager();
+      $member = $req->getMember($nickname);
+      if($member){
+        //rempli les variable de l'objet avec les valeur du tableau retourné par le model UserManager
+        $this->nickname = $member['nickname'];
+        $this->mail = $member['mail'];
+        $this->password = $member['password'];
+        $this->available = false;
+
+      }else{
+        $this->available = true;
+      }
+
     }
 
-  }
+    public function createAdmin(){
+      $this->status = "Administrateur";
+    }
+
 
 }

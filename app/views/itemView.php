@@ -17,6 +17,14 @@
       <li id="itemLvlRequiered"></li>
     </ul>
   </div>
+  <div>
+  <?php if(isset($_SESSION['nickname'])){
+    ?>
+     <button type="submit" class="btn btn-primary">Ajouter à ma liste</button>
+    <?php
+    }
+  ?>
+  </div>
 </div>
 
 <script>
