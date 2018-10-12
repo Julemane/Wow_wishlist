@@ -18,7 +18,6 @@ class Item{
         $jsonConnect = new JsonConnect();
         $apiReq = $jsonConnect->getItem($itemId);
         $this->itemUrl = $apiReq['url'];
-        //var_dump($apiReq['url']);
 
         $this->itemData = json_decode($apiReq['item'], true);
         $this->name = $this->itemData['name'];
@@ -50,30 +49,8 @@ class Item{
         return $iconUrl;
       }
 
-      public function getItemQuality(){
-          switch($this->itemQuality){
-            case 0:
-                return "Basse qualité";
-                break;
-            case 1 :
-                return "Qualité normale";
-                break;
-            case 2:
-                return "Commun";
-                break;
-            case 3 :
-                return "Rare";
-                break;
-            case 4:
-                return "Épique";
-                break;
-            case 5 :
-                return "Légendaire";
-                break;
-          }
 
 
-      }
 
 
 }

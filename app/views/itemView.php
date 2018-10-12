@@ -20,7 +20,9 @@
   <div>
   <?php if(isset($_SESSION['nickname'])){
     ?>
-     <button type="submit" class="btn btn-primary">Ajouter à ma liste</button>
+    <form action="?page=saveItem&amp;itemId=<?php echo $itemData['id'];?>&amp;itemName=<?php echo $itemData['name'];?>" method="POST">
+      <button type="submit" class="btn btn-primary">Ajouter à ma liste</button>
+    </form>
     <?php
     }
   ?>

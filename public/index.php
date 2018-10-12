@@ -47,7 +47,15 @@ try{
       echo"tous les champs ne sont pas remplis";
 
     }
+  }
+  elseif($page === "saveItem"){
+    if(isset($_GET['itemId']) && !empty($_GET['itemId']) &&
+        isset($_GET['itemName']) && !empty($_GET['itemName'])){
+      saveItem($_GET['itemId'], $_GET['itemName'], $_SESSION['nickname']);
 
+    }else{
+      echo'pas d\'item selectionné';
+    }
 
   }
 }
