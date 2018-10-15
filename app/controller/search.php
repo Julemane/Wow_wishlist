@@ -9,7 +9,8 @@ class Search
 
     if(!empty($_POST) && !empty($_POST['search'])){
       extract($_POST);
-      $search = strip_tags($search);
+
+      $search = addslashes(strip_tags($search));
 
 
       $itemManager = new ItemManager();

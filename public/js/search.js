@@ -15,6 +15,7 @@ function itemChoice(itemName, itemId){
 
           if($field.val().length>1)
           {
+
             $.ajax({
               type: 'POST',
               url: '../app/controller/Search.php',
@@ -27,6 +28,8 @@ function itemChoice(itemName, itemId){
               success: function(data){
                 $('.loader').fadeOut();
                 $('#result').html(data);
+                $("#itemId").val(itemId);
+
               }
 
             });
