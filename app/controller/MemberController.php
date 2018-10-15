@@ -41,5 +41,11 @@ function memberLogin($nickname, $password){
     echo $e->getMessage();
   }
 
+}
 
+
+function memberLogOut(){
+
+  session_destroy ();
+    header('location:index.php');
 }

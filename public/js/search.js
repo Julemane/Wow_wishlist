@@ -3,6 +3,7 @@ function itemChoice(itemName, itemId){
       $("#search").val(itemName);
       $("#itemId").val(itemId);
       $("#send").removeAttr('disabled');
+      $("#send").css({"background-color": "white"});
 
     }
 
@@ -10,11 +11,12 @@ function itemChoice(itemName, itemId){
         $('.loader').hide();
         $("#send").attr('disabled','disabled');
 
+
         $('#search').keyup(function(){
           $field = $(this);
           $('#result').html('');
           $("#send").attr('disabled','disabled');
-
+          $("#send").css({"background-color": "#f5f5f5"});
 
           if($field.val().length>1)
           {

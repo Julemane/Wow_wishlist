@@ -58,6 +58,9 @@ try{
     }
 
   }
+  elseif ($page === 'logout'){
+        memberLogOut();
+  }
 }
 
 //Gestion des erreurs
