@@ -27,6 +27,7 @@ function memberLogin($nickname, $password){
           //set the session var
           $_SESSION['nickname'] = $member->nickname;
           $_SESSION['status'] = $member->status;
+          header('Location: ?page=home');
 
         }else{
           throw new Exception('Mauvais utilisateur ou mot de passe !');

@@ -1,7 +1,7 @@
 html, body { border: 0; margin: 0; padding: 0; }
-body { background:#F2F2F2; font: 62.5% "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; min-width: 100%; color: #666;cursor: url('../images/wow_cursors.cur'), pointer; }
+body { background:#F2F2F2; font: 62.5% "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; color: #666;cursor: url('../images/wow_cursors.cur'), pointer; }
 
-
+header{background-color:black;}
 #searchArea p, label, legend { font: 1.5em "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; }
 
 #searchArea h1 { margin: 10px 0 10px; font-size: 24px; color: #333333; font-style:oblique; }
@@ -23,8 +23,8 @@ body { background:#F2F2F2; font: 62.5% "Lucida Grande", "Lucida Sans Unicode", A
 #searchArea a{color:#4E7C6A;}
 #searchArea a:hover{text-decoration:none; color:#444;}
 #searchArea h1{margin-bottom:20px;}
-
-#searchArea #load{width:90px; height:60px; padding:2px; background:url('images/ajax_loader.gif') no-repeat;}
+#searchArea #load{width:90px; height:60px; padding:2px; background:url('../images/ajax_loader.gif') no-repeat;}
+#searchArea form{margin-top:50px;}
 
 /* Style for the error message */
 
@@ -35,15 +35,8 @@ span.logout{float:right;}
 #header ul li{background:#222;list-style-type:none; display:inline; font-size:15px; margin-bottom:10px; cursor:pointer; color:white;
 border-right:solid white 1px; padding:10px;}
 
-form{margin-top:50px;}
 
 
-#commentaires{padding-top:50px; border-top:solid 1px #777;}
-
-.com{border-top:solid 1px #F1F1F1; border-bottom:solid 1px #F1F1F1; padding:10px;}
-
-span.auteur{font-size:20px; color:#4E7C6A;}
-span.auteur a{font-size:15px; color:#4E7C6A;}
 
 .success{width:50%; height:20px; line-height:20px; color:#149541; font-size:1.3em;}
 .success_message{width:50%; height:20px; line-height:20px; color:#149541; font-size:1.3em;}
@@ -92,12 +85,20 @@ span.auteur a{font-size:15px; color:#4E7C6A;}
   height:40px;
   padding:2px;
 }
-
-.logout{
-  float:right;
+#userArea{
+  background:lightgrey;
 }
+#login{
+padding-top:15px;
+padding-bottom: 15px;
+}
+#register p {
+display:inline;
+padding-top:15px;
+padding-bottom: 15px;
 
-#itemImg{
-  display:inline-block;
+}
+#register a {
+display:inline;
 
 }

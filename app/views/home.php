@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<div id="searchArea">
+<div id="searchArea" class="col-lg-8">
 
   <form action="?page=itemStats" method="post" autocomplete="off">
 

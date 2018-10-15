@@ -4,9 +4,10 @@
 
 }
 
-.itemImg{
-
+#itemImg{
+  display:inline-block;
 }
+
 
 .itemDetail{
 

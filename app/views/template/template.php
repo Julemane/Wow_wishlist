@@ -11,9 +11,16 @@
     <script type="application/javascript" src="js/search.js"></script>
     <script type="application/javascript" src="js/item.js"></script>
   </head>
-  <body>
-    <?php include("../app/views/include/accountCreation.php"); ?>
-    <?php include("../app/views/include/login.php"); ?>
+  <body class="container">
+    <header class="row">
+      <img src="images/banner.jpg" alt="banniere représentant les différentes extensions de Wow"/>
+
+    </header>
+    <section id="userArea"class="row d-flex align-items-center">
+      <?php include("../app/views/include/login.php"); ?>
+      <?php include("../app/views/include/accountCreation.php"); ?>
+    </section>
+
 
     <section class="content">
       <?= $content ?>
