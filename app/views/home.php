@@ -2,7 +2,7 @@
 
 <div id="searchArea">
 
-  <form action="?page=itemStats" method="post">
+  <form action="?page=itemStats" method="post" autocomplete="off">
 
     <label for="search">Rechercher:</label>
     <input type="text" name="search" id="search" />
