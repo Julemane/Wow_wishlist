@@ -12,7 +12,9 @@ function createMember($nickname,$mail,$password){
     $pushMember = new UserManager();
     $newMember = $pushMember->addMember($member->nickname, $member->mail, $member->password, $member->status);
 
-    echo'bravo'." ".$member->nickname." ".'votre compte a été créer avec succès !';
+    $_SESSION['nickname'] = $member->nickname;
+    $_SESSION['status'] = $member->status;
+    header('Location: ?page=home');
   }
 }
 

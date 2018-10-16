@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
+<div id="newAccountArea" class="col-lg-10">
 
-<h4>Creation de compte</h4>
-  <form action="?page=newUser" method="post">
+  <form id="newUserForm" action="?page=newUser" method="post">
       <div class="form-group">
         <label for="nickname">Pseudo</label>
         <input type="text" class="form-control" id="nickname" aria-describedby="emailHelp" placeholder="Entrez votre pseudo" name="nickname" required>
@@ -9,7 +9,6 @@
       <div class="form-group">
         <label for="mail">Votre Email</label>
         <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail" name="mail" required>
-        <small id="emailHelp" class="form-text text-muted">Votre email ne sera pas partagé avec des tiers</small>
       </div>
       <div class="form-group">
         <label for="password">Mot de passe</label>
@@ -22,7 +21,7 @@
     <button type="submit" class="btn btn-primary">Créer mon compte</button>
   </form>
 
-
+</div>
 
 
 <?php $content = ob_get_clean(); ?>
