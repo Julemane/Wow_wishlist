@@ -10,6 +10,14 @@
       <div class="invalid-feedback">
         Pseudo requis
       </div>
+      <!--If nickname already exist in DB-->
+      <div id="unavailable">
+       <?php
+        if(isset($unavailable)){
+         echo $unavailable;
+        }
+      ?>
+      </div>
     </div>
     <div class="col-md-6 mb-3">
       <label for="mail">Votre Email</label>
@@ -17,7 +25,8 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroupPrepend">@</span>
         </div>
-      <input type="email" class="form-control" id="mail" name="mail"placeholder="Votre Email"  required>
+      <input type="email" class="form-control" id="mail" name="mail"placeholder="Votre Email"
+      value="<?php if(isset($mail)){echo $mail;}?>" required>
       <div class="invalid-feedback">
        Adresse email valide requise
       </div>

@@ -20,7 +20,6 @@
   <body class="container">
     <header class="row">
       <img src="images/banner.jpg" alt="banniere représentant les différentes extensions de Wow"/>
-
     </header>
     <section id="userArea"class="row d-flex align-items-center">
       <?php
@@ -41,8 +40,7 @@
       }
       ?>
     </section>
-
-
+    <!--Dynamic Php content Area-->
     <section class="content row">
       <div class="col-lg-12">
         <?= $content ?>

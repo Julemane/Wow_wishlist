@@ -5,18 +5,26 @@ function createMember($nickname,$mail,$password){
 
   $member = new Member();
   $checkNickname = $member->memberCreation($nickname,$mail,$password);
+  try{
+    if($member->available === false){
+      throw new Exception('Le pseudo'.' '.$nickname.' '.'est deja utilisé ! ');
+    }else{
+      $pushMember = new UserManager();
+      $newMember = $pushMember->addMember($member->nickname, $member->mail, $member->password, $member->status);
 
-  if($member->available === false){
-    echo'Pseudo deja utilisé';
-  }else{
-    $pushMember = new UserManager();
-    $newMember = $pushMember->addMember($member->nickname, $member->mail, $member->password, $member->status);
+      $_SESSION['nickname'] = $member->nickname;
+      $_SESSION['status'] = $member->status;
+      header('Location: ?page=home');
+    }
+  }
+  catch(Exception $e){
 
-    $_SESSION['nickname'] = $member->nickname;
-    $_SESSION['status'] = $member->status;
-    header('Location: ?page=home');
+    $unavailable =  $e->getMessage();
+    $mail = $mail;
+    require'../app/views/newUserView.php';
   }
 }
+
 
 function memberLogin($nickname, $password){
   $member = new Member();
@@ -40,11 +48,12 @@ function memberLogin($nickname, $password){
     }
   }
   catch(Exception $e){
-    echo $e->getMessage();
+
+    $loginError =  $e->getMessage();
+    require'../app/views/home.php';
   }
 
 }
-
 
 function memberLogOut(){
 

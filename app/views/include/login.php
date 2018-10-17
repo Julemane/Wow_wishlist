@@ -13,4 +13,10 @@
         </div>
       </div>
     </form>
+    <!--Error message if nickname or password incorect -->
+     <?php
+      if(isset($loginError)){
+         echo $loginError;
+      }
+      ?>
 </div>
