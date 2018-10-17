@@ -13,7 +13,7 @@ body { background:#F2F2F2; font: 62.5% "Lucida Grande", "Lucida Sans Unicode", A
 #searchArea p, label, legend { font: 1.5em "lifecraftregular", "Lucida Sans Unicode", Arial, sans-serif; }
 #searchArea h1 { margin: 10px 0 10px; font-size: 24px; color: #333333; font-style:oblique; }
 #searchArea hr { color: inherit; height: 0; margin: 6px 0 6px 0; padding: 0; border: 1px solid #d9d9d9; border-style: none none solid; }
-#searchArea, #newAccountArea { opacity:0.9;display: block; margin: 70px auto; padding: 35px; border: 1px solid #cbcbcb; background-color: #FFF; -moz-border-radius: 5px; -webkit-border-radius:5px; min-height:400px;}
+#searchArea, #newAccountArea, #itemArea { opacity:0.9;display: block; margin: 70px auto; padding: 35px; border: 1px solid #cbcbcb; background-color: #FFF; -moz-border-radius: 5px; -webkit-border-radius:5px; min-height:400px;}
 #newAccountArea form button {font: 1.5em "lifecraftregular", "Lucida Sans Unicode", Arial, sans-serif;}
 /* Form style */
 #searchArea label { float: left; height: 26px; line-height: 26px; width: 155px; font-size: 1.5em; }
