@@ -21,7 +21,7 @@ class Search
         while($data = $req->fetch(PDO::FETCH_OBJ))
         {
           ?>
-          <h1 onClick="itemChoice('<?php echo addslashes($data->item_name);?>','<?php echo $data->id;?>');"><?php echo $data->item_name;?></h1>
+          <h1 onClick="itemChoice('<?php echo addslashes($data->item_name);?>','<?php echo $data->id;?>');"><?php echo $data->item_name;?> (Id:<?php echo $data->id;?>)</h1>
           <?php
         }
       }

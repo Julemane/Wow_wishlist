@@ -7,6 +7,7 @@ class Member
   public $nickname;
   public $mail;
   public $password;
+  public $member_id;
   public $status;
 
    public function memberCreation($nickname, $mail, $password){
@@ -33,6 +34,7 @@ class Member
         $this->nickname = $member['nickname'];
         $this->mail = $member['mail'];
         $this->password = $member['password'];
+        $this->member_id = $member['id'];
         $this->available = false;
 
       }else{

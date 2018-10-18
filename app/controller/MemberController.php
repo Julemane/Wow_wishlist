@@ -37,6 +37,7 @@ function memberLogin($nickname, $password){
           //set the session var
           $_SESSION['nickname'] = $member->nickname;
           $_SESSION['status'] = $member->status;
+          $_SESSION['member_id'] = $member->member_id;
           header('Location: ?page=home');
 
         }else{

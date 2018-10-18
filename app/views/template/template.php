@@ -13,7 +13,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
 
-
+    <script type="application/javascript" src="js/formControl.js"></script>
     <script type="application/javascript" src="js/search.js"></script>
     <script type="application/javascript" src="js/item.js"></script>
   </head>

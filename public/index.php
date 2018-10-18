@@ -52,7 +52,7 @@ try{
   elseif($page === "saveItem"){
     if(isset($_GET['itemId']) && !empty($_GET['itemId']) &&
         isset($_GET['itemName']) && !empty($_GET['itemName'])){
-      saveItem($_GET['itemId'], $_GET['itemName'], $_SESSION['nickname']);
+      saveItem($_GET['itemId'], $_GET['itemName'], $_SESSION['member_id']);
 
     }else{
       throw new Exception("pas d'item selectionné");

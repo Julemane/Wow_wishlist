@@ -12,13 +12,13 @@ class ItemManager extends Manager
     return $req;
   }
 
-  public function itemSave($itemId, $itemName, $nickname){
+  public function itemSave($itemId, $itemName, $member_id){
     $db = $this->dbConnect();
-    $req = $db->prepare('INSERT INTO wishlist(itemId, itemName, nickname) VALUES( :itemId, :itemName, :nickname)');
+    $req = $db->prepare('INSERT INTO wishlist(itemId, itemName, member_id) VALUES( :itemId, :itemName, :member_id)');
     $req->execute(array(
               'itemId' => $itemId,
               'itemName' => $itemName,
-              'nickname' => $nickname
+              'member_id' => $member_id
             ));
   }
 

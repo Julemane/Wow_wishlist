@@ -10,14 +10,14 @@ function getItemData($itemId){
     require'../app/views/itemView.php';
 }
 
-function saveItem($itemId, $itemName, $nickname){
+function saveItem($itemId, $itemName, $member_id){
 
     $itemManager= new ItemManager();
-    $itemToSave = $itemManager->itemSave($itemId, $itemName, $nickname);
+    $itemToSave = $itemManager->itemSave($itemId, $itemName, $member_id);
 
     echo $itemId;
     echo $itemName;
-    echo $nickname;
+    echo $member_id;
 
 }
 
