@@ -21,7 +21,8 @@ try{
       getItemData($_POST['itemId']);
 
     }else{
-      echo "Aucun item sélectionné ! ";
+      throw new Exception("Aucun item sélectionné ! ");
+      ;
     }
   }
   elseif($page === "creationUser"){
@@ -34,7 +35,7 @@ try{
                   && isset($_POST['password2']) && !empty($_POST['password2'])){
       createMember($_POST['nickname'],$_POST['mail'],$_POST['password']);
   }else
-  echo "tous les champs ne sont pas remplis !";
+  throw new Exception("tous les champs ne sont pas remplis !");
 
   }
   elseif($page ==="login"){
@@ -44,7 +45,7 @@ try{
         memberLogin($_POST['userNickname'],$_POST['userPassword'] );
 
     }else{
-      echo"tous les champs ne sont pas remplis";
+      throw new Exception("tous les champs ne sont pas remplis");
 
     }
   }
@@ -54,7 +55,7 @@ try{
       saveItem($_GET['itemId'], $_GET['itemName'], $_SESSION['nickname']);
 
     }else{
-      echo'pas d\'item selectionné';
+      throw new Exception("pas d'item selectionné");
     }
 
   }
@@ -68,7 +69,7 @@ catch(Exception $e) {
     ob_start();
     ?>
 
-    <div id="errorPage">
+    <div id="error">
         <p><?php  echo 'Erreur : ' . $e->getMessage(); ?></p>
         <p><a href="index.php">Retour à l'accueil</a></p>
     </div>
