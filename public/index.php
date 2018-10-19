@@ -59,6 +59,15 @@ try{
     }
 
   }
+  elseif ($page === "wishlist"){
+    if(isset($_SESSION['member_id'])){
+      getWishlist($_SESSION['member_id']);
+
+    }else{
+      throw new Exception("Vous devez être connecté pour accéder à votre liste de souhaits");
+    }
+  }
+
   elseif ($page === 'logout'){
         memberLogOut();
   }

@@ -22,5 +22,12 @@ class ItemManager extends Manager
             ));
   }
 
+ public function getMemberWishlist($member_id){
+    $db = $this->dbConnect();
+    $req = $db->prepare('SELECT itemId FROM wishlist WHERE member_id = ?');
+    $req->execute(array($member_id));
+    return $req;
+  }
+
 
 }

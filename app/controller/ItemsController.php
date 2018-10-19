@@ -15,10 +15,15 @@ function saveItem($itemId, $itemName, $member_id){
 
     $itemManager= new ItemManager();
     $itemToSave = $itemManager->itemSave($itemId, $itemName, $member_id);
+    //Root to the wishlist whien item is added
+    header('Location: ?page=wishlist');
 
-    echo $itemId;
-    echo $itemName;
-    echo $member_id;
+}
+
+function getWishlist($member_id){
+   $itemManager = new ItemManager();
+   $wishlist = $itemManager->getMemberWishlist($member_id);
+  require'../app/views/userWishlistView.php';
 
 }
 

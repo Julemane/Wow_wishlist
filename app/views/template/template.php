@@ -28,7 +28,7 @@
           <div class="col-lg-12" id="loggedUser">
             <h2>Hello <?php echo $_SESSION['nickname']; ?></h2>
             <div>
-              <a href="?page="><button type="button" class="btn btn-dark">Liste de souhait</button></a>
+              <a href="?page=wishlist"><button type="button" class="btn btn-dark">Liste de souhait</button></a>
               <a href="?page=logout"><button type="button" class="btn btn-dark">Déconnexion</button></a>
             </div>
           </div>

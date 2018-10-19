@@ -33,7 +33,4 @@ class UserManager extends Manager
         return $member;
     }
 
-
-
-
 }
