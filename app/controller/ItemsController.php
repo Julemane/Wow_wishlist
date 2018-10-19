@@ -1,5 +1,6 @@
 <?php
-require_once('../app/model/itemManager.php');
+
+require_once('../app/model/ItemManager.php');
 
 function getItemData($itemId){
   //Creation d'une instance de la classe Item
