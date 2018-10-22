@@ -14,7 +14,7 @@ class ItemManager extends Manager
 
   public function itemSave($itemId, $itemName, $member_id){
     $db = $this->dbConnect();
-    $req = $db->prepare('INSERT INTO wishlist(itemId, itemName, member_id) VALUES( :itemId, :itemName, :member_id)');
+    $req = $db->prepare('REPLACE INTO wishlist(itemId, itemName, member_id) VALUES( :itemId, :itemName, :member_id)');
     $req->execute(array(
               'itemId' => $itemId,
               'itemName' => $itemName,

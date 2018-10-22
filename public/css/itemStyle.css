@@ -1,4 +1,4 @@
-
+/*Style for items in search result*/
 .itemDetail{
 background-image: url("https://wow.zamimg.com/images/wow/tooltip.png");
 background-size: cover;
@@ -11,7 +11,6 @@ max-width: 300px;
 padding-right: 5px;
 padding-top: 5px;
 padding-left:5px;
-
 }
 .itemDetail ul{
   list-style-type:none;
@@ -32,4 +31,26 @@ padding-left:5px;
 }
 #button-group{
   justify-content:center;
+}
+
+
+/*Style for items in wishlist*/
+.itemDetailList{
+background-image: url("https://wow.zamimg.com/images/wow/tooltip.png");
+background-size: cover;
+color: rgb(255, 255, 255);
+font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+font-size: 12px;
+line-height: 17px;
+max-height: 450px;
+max-width: 300px;
+padding-right: 5px;
+padding-top: 5px;
+padding-left:5px;
+
+}
+.itemDetailList ul{
+  list-style-type:none;
+  padding-left: 5px;
+  line-height: 150%;
 }
