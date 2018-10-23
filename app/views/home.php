@@ -9,7 +9,7 @@
     </div>
     <input id="itemId" name="itemId" type="hidden" />
     <div class="col-lg-4">
-      <input type="submit" value="Rechercher" id="send"/>
+      <input type="submit" value="Voir l'objet" id="send"/>
     </div>
     <div class="loader"></div>
   </form>

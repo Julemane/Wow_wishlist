@@ -35,7 +35,7 @@ padding-left:5px;
 
 
 /*Style for items in wishlist*/
-.itemDetailList{
+#itemDetailList{
 background-image: url("https://wow.zamimg.com/images/wow/tooltip.png");
 background-size: cover;
 color: rgb(255, 255, 255);
@@ -47,9 +47,11 @@ max-width: 300px;
 padding-right: 5px;
 padding-top: 5px;
 padding-left:5px;
+display:none;
 
 }
-.itemDetailList ul{
+
+#itemDetailList ul{
   list-style-type:none;
   padding-left: 5px;
   line-height: 150%;

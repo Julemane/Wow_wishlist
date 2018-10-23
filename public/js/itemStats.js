@@ -22,8 +22,8 @@ function ajaxGetStats(itemId){
   let item = new XMLHttpRequest();
     item.open("GET", "https://eu.api.battle.net/wow/item/" + itemId + "?locale=fr_FR&apikey=ku2wn4dac3gcfeb7vjubk927g2bmsfn3");
     item.addEventListener("load",function () {
-    const statsItem = JSON.parse(item.responseText);
-    itemInfo(statsItem);
+      const statsItem = JSON.parse(item.responseText);
+      itemInfo(statsItem);
     });
     item.send(null);
 }
@@ -41,18 +41,18 @@ function itemInfo(statsItem){
     let itemDescElt = document.createElement('li');
     let itemBonusStatsElt = document.createElement('li');
 
+    itemName.innerHTML = statsItem.name;
+    itemName.style.color = colorsItems[statsItem.quality];
+    //itemImg.style.border = "3px solid"+ colorsItems[statsItem['quality']];
 
-    itemName.style.color = colorsItems[statsItem['quality']];
-    itemImg.style.border = "3px solid"+ colorsItems[statsItem['quality']];
-
-    itemLvl.innerHTML = "Niveau d'objet " + statsItem['itemLevel'];
+    itemLvl.innerHTML = "Niveau d'objet " + statsItem.itemLevel;
     itemLvl.style.color = "#ffd100";
 
-    itemArmor.innerHTML = "Armure : " + statsItem['baseArmor'];
+    itemArmor.innerHTML = "Armure : " + statsItem.baseArmor;
 
-    itemBind.innerHTML = bind[statsItem['itemBind']];
+    itemBind.innerHTML = bind[statsItem.itemBind];
 
-    itemDurability.innerHTML = "Durabilité : "+statsItem['maxDurability']+"/"+statsItem['maxDurability'];
+    itemDurability.innerHTML = "Durabilité : "+statsItem.maxDurability+"/"+statsItem.maxDurability;
 
     //Creation des puces itemSpell si defini dans la reponse
     let spells = statsItem['itemSpells'];
@@ -64,18 +64,19 @@ function itemInfo(statsItem){
 
     });
 
-    itemLvlRequiered.innerHTML = "Niveau"+ " " + statsItem['requiredLevel'] + " " + "requis";
+    itemLvlRequiered.innerHTML = "Niveau"+ " " + statsItem.requiredLevel + " " + "requis";
 
     //Creation puce description si existante
-    let itemDesc = statsItem['description'];
+    let itemDesc = statsItem.description;
     if(itemDesc){
       itemStats.appendChild(itemDescElt);
-      itemDescElt.innerHTML = '"' + statsItem['description'] + '"';
+      itemDescElt.innerHTML = '"' + statsItem.description + '"';
       itemDescElt.style.color = "#ffd100";
     }
 
     //Gestion des stats Bonus
     //Pour chaques valeurs de stats
+
     for(i=0;i<=statsItem['bonusStats'].length-1;i++){
       let stat = statsItem['bonusStats'][i];
       //Conditionement de l'ecriture des stats

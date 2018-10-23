@@ -7,7 +7,7 @@
      <img id='itemImg' src="<?php echo $itemIcon;?>">
     </div>
     <div class="itemDetail">
-      <h4 id="itemName"><?php echo $itemData['name'];?></h4>
+      <h4 id="itemName"></h4>
       <ul id=itemStats>
         <li>Id de l'item :<span id="itemId"><?php echo $itemData['id'];?></span></li>
         <li id="itemLvl"></li>
