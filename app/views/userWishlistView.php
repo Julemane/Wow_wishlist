@@ -20,7 +20,7 @@ echo '<tr class="item' . $item['itemId'] . '">'; ?>
 <!--Area appear hover IMG-->
     <div id="itemDetailList">
       <h4 id="itemName"></h4>
-      <ul class=itemStats>
+      <ul id=itemStats>
         <li id="itemLvl"></li>
         <li id="bind"></li>
         <li id="armor"></li>

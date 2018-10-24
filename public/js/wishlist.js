@@ -23,11 +23,11 @@ function wishlistItemInfo(statsItem){
     itemName.innerHTML = statsItem.name;
     itemImg.children[0].src = 'https:/render-eu.worldofwarcraft.com/icons/56/'+statsItem.icon+'.jpg';
     itemImg.children[0].style.border = "3px solid"+ colorsItems[statsItem.quality];
+
     //Get bonus stats on MouseOver ItemImg
     itemImg.children[0].addEventListener("mouseover",function(){
       ajaxGetStats(statsItem.id);
       itemDetailList.style.display = "block";
-
     })
 
 }
