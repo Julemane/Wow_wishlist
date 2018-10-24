@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-
 <div id="userListArea" class="col-lg-10">
 
 <table id="wishlist" class="table">

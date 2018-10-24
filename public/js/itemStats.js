@@ -28,9 +28,9 @@ function ajaxGetStats(itemId){
     item.send(null);
 }
 
-//Creation des stats de l'item
+//Item Stats Area on search result
 function itemInfo(statsItem){
-    let itemStatsUl = document.getElementById("itemStats");
+    let itemStats = document.getElementById("itemStats");
     let itemName = document.getElementById("itemName");
     let itemImg = document.getElementById("itemImg");
     let itemLvl = document.getElementById("itemLvl");
@@ -39,7 +39,8 @@ function itemInfo(statsItem){
     let itemDurability = document.getElementById("durability");
     let itemLvlRequiered = document.getElementById("itemLvlRequiered");
     let itemDescElt = document.createElement('li');
-    let itemBonusStatsElt = document.createElement('li');
+    let itemBonusStats_1Elt = document.createElement('li');
+    let itemBonusStats_2Elt = document.createElement('li');
 
     itemName.innerHTML = statsItem.name;
     itemName.style.color = colorsItems[statsItem.quality];
@@ -60,6 +61,7 @@ function itemInfo(statsItem){
       let onUse = document.createElement('li');
       itemStats.appendChild(onUse);
       onUse.innerHTML = "Utiliser: " + spells.scaledDescription;
+      onUse.setAttribute("class", "onUse");
       onUse.style.color = "#1eff00";
     });
 
@@ -70,6 +72,7 @@ function itemInfo(statsItem){
     if(itemDesc){
       itemStats.appendChild(itemDescElt);
       itemDescElt.innerHTML = '"' + statsItem.description + '"';
+      itemDescElt.setAttribute("id", "itemDescription");
       itemDescElt.style.color = "#ffd100";
     }
 
@@ -86,16 +89,16 @@ function itemInfo(statsItem){
             statName =="Maitrise" ||
             statName == "Polyvalence" ||
             statName == "Evitement"){
-              itemBonusStatsElt.innerHTML = '<li class="bonusStat_1"> Augmente votre score de' + ' ' + statName + ' de '  + '+' + stat.amount+'</li>';
-              itemArmor.insertAdjacentHTML('afterEnd',itemBonusStatsElt.innerHTML);
+              itemBonusStats_1Elt.innerHTML = '<li class="bonusStat_1"> Augmente votre score de' + ' ' + statName + ' de '  + '+' + stat.amount+'</li>';
+              itemArmor.insertAdjacentHTML('afterEnd',itemBonusStats_1Elt.innerHTML);
               //coloration en vert des bonusStat_1
              let bonusStatsColor = document.getElementsByClassName("bonusStat_1");
               bonusStatsColor[0].style.color = "#1eff00";
 
         }else{
           //Affichage des autres stats bonus
-          itemBonusStatsElt.innerHTML = '<li class="bonusStat_2">+'+stat.amount + " " + statName;
-          itemArmor.insertAdjacentHTML('beforeEnd',itemBonusStatsElt.innerHTML);
+          itemBonusStats_2Elt.innerHTML = '<li class="bonusStat_2">+'+stat.amount + " " + statName;
+          itemArmor.insertAdjacentHTML('beforeEnd',itemBonusStats_2Elt.innerHTML);
         }
       }
 }

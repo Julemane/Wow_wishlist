@@ -28,6 +28,27 @@ function wishlistItemInfo(statsItem){
     itemImg.children[0].addEventListener("mouseover",function(){
       ajaxGetStats(statsItem.id);
       itemDetailList.style.display = "block";
+
+    })
+    //On mousse leave IMG
+    itemImg.children[0].addEventListener("mouseleave",function(){
+      itemDetailList.style.display = "none";
+      let onUseElt = document.getElementsByClassName("onUse");
+      let bonusStat1Elt = document.getElementsByClassName("bonusStat_1");
+      let itemDescription = document.getElementById("itemDescription");
+
+      [...onUseElt].forEach(function(elt){
+        itemStats.removeChild(elt);
+      });
+
+      [...bonusStat1Elt].forEach(function(elt){
+          itemStats.removeChild(elt);
+      });
+
+      if(itemDescription){
+        itemStats.removeChild(itemDescription);
+      }
+
     })
 
 }
