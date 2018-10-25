@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-  <meta charset="UTF-8">
+<html lang="fr">
   <head>
-    <title>WoW Wishlist</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/itemStyle.css" />
@@ -17,6 +17,9 @@
     <script type="application/javascript" src="js/search.js"></script>
     <script type="application/javascript" src="js/itemStats.js"></script>
     <script type="application/javascript" src="js/wishlist.js"></script>
+
+    <title>WoW Wishlist</title>
+
   </head>
   <body class="container">
     <header class="row">

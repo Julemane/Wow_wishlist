@@ -30,8 +30,10 @@ function wishlistItemInfo(statsItem){
       itemDetailList.style.display = "block";
 
     })
-    //On mousse leave IMG
+
+    //Mousse leaving ItemImg
     itemImg.children[0].addEventListener("mouseleave",function(){
+
       itemDetailList.style.display = "none";
       let onUseElt = document.getElementsByClassName("onUse");
       let bonusStat1Elt = document.getElementsByClassName("bonusStat_1");
