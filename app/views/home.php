@@ -5,7 +5,7 @@
 
   <form  class="form-inline" action="?page=itemStats" method="post" autocomplete="off">
     <div class="col-lg-8">
-      <input type="text" name="search" id="search"  placeholder="Nom de l'item"/>
+      <input type="text" name="search" id="search"  placeholder="Nom de l'objet"/>
     </div>
     <input id="itemId" name="itemId" type="hidden" />
     <div class="col-lg-4">

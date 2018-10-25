@@ -27,7 +27,16 @@ function wishlistItemInfo(statsItem){
     //Get bonus stats on MouseOver ItemImg
     itemImg.children[0].addEventListener("mouseover",function(){
       ajaxGetStats(statsItem.id);
-      itemDetailList.style.display = "block";
+
+      document.onmousemove = position;
+      function position(e) {
+        x = (navigator.appName.substring(0,3) == "Net") ? e.pageX : event.x+document.body.scrollLeft;
+        y = (navigator.appName.substring(0,3) == "Net") ? e.pageY : event.y+document.body.scrollTop;
+        }
+
+        itemDetailList.style.display = "block";
+        itemDetailList.style.left = x-10 +"%"
+        itemDetailList.style.top = y-10 +"%"
 
     })
 
@@ -54,6 +63,7 @@ function wishlistItemInfo(statsItem){
     })
 
 }
+
 
 
 

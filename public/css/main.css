@@ -7,6 +7,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 html, body { border: 0; margin: 0; padding: 0; }
 body { background:#F2F2F2; font: 62.5% "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; color: #666;cursor: url('../images/wow_cursors.cur'), pointer; }
 
