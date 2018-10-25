@@ -21,30 +21,29 @@ function wishlistItemInfo(statsItem){
     let itemImg = item[0].children[0];
 
     itemName.innerHTML = statsItem.name;
+    itemName.style.color = colorsItems[statsItem.quality];
     itemImg.children[0].src = 'https:/render-eu.worldofwarcraft.com/icons/56/'+statsItem.icon+'.jpg';
     itemImg.children[0].style.border = "3px solid"+ colorsItems[statsItem.quality];
 
     //Get bonus stats on MouseOver ItemImg
-    itemImg.children[0].addEventListener("mouseover",function(){
+    itemImg.children[0].addEventListener("mouseover",function(event){
       ajaxGetStats(statsItem.id);
 
-      document.onmousemove = position;
-      function position(e) {
-        x = (navigator.appName.substring(0,3) == "Net") ? e.pageX : event.x+document.body.scrollLeft;
-        y = (navigator.appName.substring(0,3) == "Net") ? e.pageY : event.y+document.body.scrollTop;
-        }
+      itemDetailList.style.left = (110+event.offsetX)+ "px";
+      itemDetailList.style.top = (event.pageY-400) + "px";
+      itemDetailList.style.display = "block";
 
-        itemDetailList.style.display = "block";
-        itemDetailList.style.left = x-10 +"%"
-        itemDetailList.style.top = y-10 +"%"
 
     })
-
     //Mousse leaving ItemImg
     itemImg.children[0].addEventListener("mouseleave",function(){
-
+      cleanItemStats();
       itemDetailList.style.display = "none";
-      let onUseElt = document.getElementsByClassName("onUse");
+   })
+}
+
+function cleanItemStats(){
+  let onUseElt = document.getElementsByClassName("onUse");
       let bonusStat1Elt = document.getElementsByClassName("bonusStat_1");
       let itemDescription = document.getElementById("itemDescription");
 
@@ -60,10 +59,4 @@ function wishlistItemInfo(statsItem){
         itemStats.removeChild(itemDescription);
       }
 
-    })
-
 }
-
-
-
-

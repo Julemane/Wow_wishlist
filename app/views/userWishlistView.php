@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 <div id="userListArea" class="col-lg-10">
 
-<table id="wishlist" class="table">
+<table id="wishlist" class="table table-responsive-xl table-dark">
   <tbody>
     <?php
       while($item = $wishlist->fetch()){
@@ -16,7 +16,7 @@ echo '<tr class="item' . $item['itemId'] . '">'; ?>
         ?>
   </tbody>
 </table>
-<!--Area appear hover IMG-->
+  <!--Area appear hover IMG-->
     <div id="itemDetailList">
       <h4 id="itemName"></h4>
       <ul id=itemStats>
