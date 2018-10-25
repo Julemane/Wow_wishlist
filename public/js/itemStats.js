@@ -38,25 +38,25 @@ function itemInfo(statsItem){
     let itemBind = document.getElementById("bind");
     let itemDurability = document.getElementById("durability");
     let itemLvlRequiered = document.getElementById("itemLvlRequiered");
-    let itemDescElt = document.createElement('li');
-    let itemBonusStats_1Elt = document.createElement('li');
-    let itemBonusStats_2Elt = document.createElement('li');
 
+    let itemDescElt = document.createElement('li');
+    let itemBonusStatsElt = document.createElement('li');
+
+
+    if(itemImg){
+       itemImg.style.border = "3px solid"+ colorsItems[statsItem.quality];
+     }
     itemName.innerHTML = statsItem.name;
     itemName.style.color = colorsItems[statsItem.quality];
-    //itemImg.style.border = "3px solid"+ colorsItems[statsItem.quality];
-
     itemLvl.innerHTML = "Niveau d'objet " + statsItem.itemLevel;
     itemLvl.style.color = "#ffd100";
-
     itemArmor.innerHTML = "Armure : " + statsItem.baseArmor;
-
     itemBind.innerHTML = bind[statsItem.itemBind];
-
     itemDurability.innerHTML = "Durabilité : "+statsItem.maxDurability+"/"+statsItem.maxDurability;
+    itemLvlRequiered.innerHTML = "Niveau"+ " " + statsItem.requiredLevel + " " + "requis";
 
     //Creation des puces itemSpell si defini dans la reponse
-    let spells = statsItem['itemSpells'];
+    let spells = statsItem.itemSpells;
     spells.forEach(function(spells){
       let onUse = document.createElement('li');
       itemStats.appendChild(onUse);
@@ -64,8 +64,6 @@ function itemInfo(statsItem){
       onUse.setAttribute("class", "onUse");
       onUse.style.color = "#1eff00";
     });
-
-    itemLvlRequiered.innerHTML = "Niveau"+ " " + statsItem.requiredLevel + " " + "requis";
 
     //Creation puce description si la requete en retourne une
     let itemDesc = statsItem.description;
@@ -78,29 +76,27 @@ function itemInfo(statsItem){
 
     //Gestion des stats Bonus
     //Pour chaques valeurs de stat
+    for(i=0;i<=statsItem['bonusStats'].length-1;i++){
+      let stat = statsItem['bonusStats'][i];
+      //Conditionement de l'ecriture des stats
+      let statName = bonusStats[stat.stat];
+      if (statName =="Coup critique" ||
+          statName =="Hâte" ||
+          statName =="Maitrise" ||
+          statName == "Polyvalence" ||
+          statName == "Evitement"){
+            itemBonusStatsElt.innerHTML = '<li class="bonusStat_1"> Augmente votre score de' + ' ' + statName + ' de '  + '+' + stat.amount+'</li>';
+            itemArmor.insertAdjacentHTML('afterEnd',itemBonusStatsElt.innerHTML);
+            //coloration en vert des bonusStat_1
+            let bonusStatsColor = document.getElementsByClassName("bonusStat_1");
+            bonusStatsColor[0].style.color = "#1eff00";
 
-        for(i=0;i<=statsItem['bonusStats'].length-1;i++){
-
-        let stat = statsItem['bonusStats'][i];
-        //Conditionement de l'ecriture des stats
-        let statName = bonusStats[stat.stat];
-        if (statName =="Coup critique" ||
-            statName =="Hâte" ||
-            statName =="Maitrise" ||
-            statName == "Polyvalence" ||
-            statName == "Evitement"){
-              itemBonusStats_1Elt.innerHTML = '<li class="bonusStat_1"> Augmente votre score de' + ' ' + statName + ' de '  + '+' + stat.amount+'</li>';
-              itemArmor.insertAdjacentHTML('afterEnd',itemBonusStats_1Elt.innerHTML);
-              //coloration en vert des bonusStat_1
-             let bonusStatsColor = document.getElementsByClassName("bonusStat_1");
-              bonusStatsColor[0].style.color = "#1eff00";
-
-        }else{
-          //Affichage des autres stats bonus
-          itemBonusStats_2Elt.innerHTML = '<li class="bonusStat_2">+'+stat.amount + " " + statName;
-          itemArmor.insertAdjacentHTML('beforeEnd',itemBonusStats_2Elt.innerHTML);
-        }
+      }else{
+        //Affichage des autres stats bonus
+        itemBonusStatsElt.innerHTML = '<li class="bonusStat_2">+'+stat.amount + " " + statName;
+        itemArmor.insertAdjacentHTML('beforeEnd',itemBonusStatsElt.innerHTML);
       }
+    }
 }
 
 

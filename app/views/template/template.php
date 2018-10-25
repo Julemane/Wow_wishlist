@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    <script type="application/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
     <script type="application/javascript" src="js/formControl.js"></script>
     <script type="application/javascript" src="js/search.js"></script>
     <script type="application/javascript" src="js/itemStats.js"></script>
@@ -20,9 +20,9 @@
   </head>
   <body class="container">
     <header class="row">
-      <img src="images/banner.jpg" alt="banniere représentant les différentes extensions de Wow"/>
+      <a href="?page=home"><img class="img-fluid" src="images/banner.jpg" alt="banniere représentant les différentes extensions de Wow"/></a>
     </header>
-    <section id="userArea"class="row d-flex align-items-center">
+    <section id="userArea" class="row d-flex align-items-center">
       <?php
       if(isset($_SESSION['nickname'])){
         ?>
