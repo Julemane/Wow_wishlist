@@ -11,10 +11,17 @@ class ItemManager extends Manager
 
     return $req;
   }
+  public function checkItem($itemId, $member_id){
+    $db = $this->dbConnect();
+    $req = $db->prepare('SELECT itemId, member_id FROM wishlist WHERE itemId = ? AND member_id = ?');
+    $req->execute(array($itemId, $member_id));
+    $item = $req->fetch();
+    return $item['itemId'];
+  }
 
   public function itemSave($itemId, $itemName, $member_id){
     $db = $this->dbConnect();
-    $req = $db->prepare('REPLACE INTO wishlist(itemId, itemName, member_id) VALUES( :itemId, :itemName, :member_id)');
+    $req = $db->prepare('INSERT INTO wishlist(itemId, itemName, member_id) VALUES( :itemId, :itemName, :member_id)');
     $req->execute(array(
               'itemId' => $itemId,
               'itemName' => $itemName,
@@ -27,6 +34,13 @@ class ItemManager extends Manager
     $req = $db->prepare('SELECT itemId FROM wishlist WHERE member_id = ?');
     $req->execute(array($member_id));
     return $req;
+  }
+
+  public function itemDelete($itemId, $member_id){
+    $db = $this->dbConnect();
+    $req = $db->prepare("DELETE FROM wishlist WHERE itemId= ? AND  member_id = ?");
+    $req->execute(array($itemId, $member_id));
+
   }
 
 

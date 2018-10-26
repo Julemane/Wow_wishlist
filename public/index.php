@@ -67,6 +67,14 @@ try{
       throw new Exception("Vous devez être connecté pour accéder à votre liste de souhaits");
     }
   }
+  elseif($page === "deleteItem"){
+    if(isset($_GET['itemId']) && isset($_SESSION['member_id'])){
+     deleteItem($_GET['itemId'], $_SESSION['member_id']);
+    }
+    else{
+      throw new Exception("Vous devez être connecté pour accéder à votre liste de souhaits");
+    }
+  }
 
   elseif ($page === 'logout'){
         memberLogOut();
