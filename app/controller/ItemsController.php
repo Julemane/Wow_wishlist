@@ -23,6 +23,7 @@ function saveItem($itemId, $itemName, $member_id){
 function getWishlist($member_id){
    $itemManager = new ItemManager();
    $wishlist = $itemManager->getMemberWishlist($member_id);
+
   require'../app/views/userWishlistView.php';
 
 }
