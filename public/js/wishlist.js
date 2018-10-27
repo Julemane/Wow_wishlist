@@ -11,6 +11,14 @@ function getItemsStats(itemId){
     item.send(null);
 }
 
+function itemStatsLoader(){
+    let itemIdElt = document.getElementsByClassName("itemId");
+    console.log([...itemIdElt]);
+  [...itemIdElt].forEach(function(elt){
+    getItemsStats(elt.innerHTML);
+  })
+}
+
 //Create Item Info on the table
 function wishlistItemInfo(statsItem){
 

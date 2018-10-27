@@ -1,6 +1,14 @@
 <?php ob_start(); ?>
 <div id="userListArea" class="col-lg-10">
-  <table id="wishlist" class="table table-responsive-xl table-dark">
+  <table id="wishlist" class="table table-responsive-sm table-dark">
+  <thead>
+    <tr>
+      <th>Icone</th>
+      <th>Id de l'item</th>
+      <th>Nom de l'item</th>
+      <th>Action</th>
+    </tr>
+  </thead>
   <tbody>
     <?php
       while($item = $wishlist->fetch()){
@@ -33,17 +41,26 @@ echo '<tr class="item' . $item['itemId'] . '">'; ?>
       <li id="itemLvlRequiered"></li>
     </ul>
 </div>
-
 <script>
 
-$(document).ready(function(){
-  let itemIdElt = document.getElementsByClassName("itemId");
+$(document).ready(itemStatsLoader());
 
-  [...itemIdElt].forEach(function(elt){
-    getItemsStats(elt.innerHTML);
-  })
+$.extend( true, $.fn.dataTable.defaults, {
+    "searching": false,
+    "ordering": false
+} );
+$(document).ready(function(){
+
+   $('#wishlist').DataTable({
+        "lengthMenu": [[5, 8], [5, 8]],
+        "pagingType": "simple",
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+        }
+    });
 
 });
+
 </script>
 
 <?php $content = ob_get_clean(); ?>
