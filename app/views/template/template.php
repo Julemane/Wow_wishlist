@@ -26,17 +26,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <!--Jquery 3.3.1-->
-    <script type="application/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
     <!--Bootstrap JS-->
-    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
     <!--LOCAL JS-->
-    <script type="application/javascript" src="js/formControl.js"></script>
-    <script type="application/javascript" src="js/search.js"></script>
-    <script type="application/javascript" src="js/itemStats.js"></script>
-    <script type="application/javascript" src="js/wishlist.js"></script>
-    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js">
+    <script src="js/formControl.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/itemStats.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/jquery.dataTables.js">
   </script>
 
     <title>WoW Wishlist</title>

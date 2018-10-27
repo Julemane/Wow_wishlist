@@ -70,3 +70,6 @@ display:inline;
 #unavailable{
   color:red;
 }
+.table th,td {
+   text-align: center;
+}
