@@ -17,7 +17,6 @@ const bonusStats = {
 }
 
 
-
 function ajaxGetStats(itemId){
   let item = new XMLHttpRequest();
     item.open("GET", "https://eu.api.battle.net/wow/item/" + itemId + "?locale=fr_FR&apikey=ku2wn4dac3gcfeb7vjubk927g2bmsfn3");
@@ -42,10 +41,9 @@ function itemInfo(statsItem){
     let itemDescElt = document.createElement('li');
     let itemBonusStatsElt = document.createElement('li');
 
-
     if(itemImg){
        itemImg.style.border = "3px solid"+ colorsItems[statsItem.quality];
-     }
+     };
     itemName.innerHTML = statsItem.name;
     itemName.style.color = colorsItems[statsItem.quality];
     itemLvl.innerHTML = "Niveau d'objet " + statsItem.itemLevel;
@@ -55,7 +53,7 @@ function itemInfo(statsItem){
     itemDurability.innerHTML = "Durabilité : "+statsItem.maxDurability+"/"+statsItem.maxDurability;
     itemLvlRequiered.innerHTML = "Niveau"+ " " + statsItem.requiredLevel + " " + "requis";
 
-    //Creation des puces itemSpell si defini dans la reponse
+    //If item spell (ON USE SPELL) is return by api
     let spells = statsItem.itemSpells;
     spells.forEach(function(spells){
       let onUse = document.createElement('li');
@@ -65,7 +63,7 @@ function itemInfo(statsItem){
       onUse.style.color = "#1eff00";
     });
 
-    //Creation puce description si la requete en retourne une
+    //If Item description is return by the api
     let itemDesc = statsItem.description;
     if(itemDesc){
       itemStats.appendChild(itemDescElt);
@@ -74,8 +72,8 @@ function itemInfo(statsItem){
       itemDescElt.style.color = "#ffd100";
     }
 
-    //Gestion des stats Bonus
-    //Pour chaques valeurs de stat
+    //Stats Bonus Management
+    //For every Stats in the BonusStats array return by the api we do :
     for(i=0;i<=statsItem['bonusStats'].length-1;i++){
       let stat = statsItem['bonusStats'][i];
       //Conditionement de l'ecriture des stats

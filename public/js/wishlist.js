@@ -1,9 +1,7 @@
 
 function getItemsStats(itemId){
-
   let item = new XMLHttpRequest();
     item.open("GET", "https://eu.api.battle.net/wow/item/" + itemId + "?locale=fr_FR&apikey=ku2wn4dac3gcfeb7vjubk927g2bmsfn3");
-
     item.addEventListener("load",function () {
       const statsItem = JSON.parse(item.responseText);
       wishlistItemInfo(statsItem);
@@ -11,6 +9,7 @@ function getItemsStats(itemId){
     item.send(null);
 }
 
+//Load the items detailed stats for each items in the User wishlist
 function itemStatsLoader(){
     let itemIdElt = document.getElementsByClassName("itemId");
     console.log([...itemIdElt]);
@@ -19,7 +18,7 @@ function itemStatsLoader(){
   })
 }
 
-//Create Item Info on the table
+//Create Item Info on the table (itemImg, itemName)
 function wishlistItemInfo(statsItem){
 
     let item = document.getElementsByClassName("item"+statsItem.id);
@@ -46,7 +45,6 @@ function wishlistItemInfo(statsItem){
       cleanItemStats();
       itemDetailList.style.display = "none";
    })
-
     //Touch Event
    itemImg.children[0].addEventListener("touchstart",function(event){
     event.preventDefault();
@@ -59,8 +57,6 @@ function wishlistItemInfo(statsItem){
       itemDetailList.style.display = "none";
       cleanItemStats();
    }, false)
-
-
 }
 
 function cleanItemStats(){
