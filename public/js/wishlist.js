@@ -40,14 +40,27 @@ function wishlistItemInfo(statsItem){
       itemDetailList.style.left = (110+event.offsetX)+ "px";
       itemDetailList.style.top = (event.pageY-400) + "px";
       itemDetailList.style.display = "block";
-
-
     })
     //Mousse leaving ItemImg
     itemImg.children[0].addEventListener("mouseleave",function(){
       cleanItemStats();
       itemDetailList.style.display = "none";
    })
+
+    //Touch Event
+   itemImg.children[0].addEventListener("touchstart",function(event){
+    event.preventDefault();
+    ajaxGetStats(statsItem.id);
+      itemDetailList.style.left = (50+event.offsetX)+ "px";
+      itemDetailList.style.top = (event.pageY-400) + "px";
+      itemDetailList.style.display = "block";
+   }, false)
+   itemImg.children[0].addEventListener("touchend",function(e){
+      itemDetailList.style.display = "none";
+      cleanItemStats();
+   }, false)
+
+
 }
 
 function cleanItemStats(){

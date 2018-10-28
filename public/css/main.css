@@ -73,3 +73,10 @@ display:inline;
 .table th,td {
    text-align: center;
 }
+
+
+@media screen and (max-width: 1024px) {
+  body{
+    min-width:100%;
+  }
+}

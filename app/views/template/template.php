@@ -50,7 +50,7 @@
       <?php
       if(isset($_SESSION['nickname'])){
         ?>
-          <div class="col-lg-12" id="loggedUser">
+          <div class="col-xl-12" id="loggedUser">
             <h2>Hello <?php echo $_SESSION['nickname']; ?></h2>
             <div>
               <a href="?page=wishlist"><button type="button" class="btn btn-dark">Liste de souhait</button></a>
@@ -67,7 +67,7 @@
     </section>
     <!--Dynamic Php content Area-->
     <section class="content row">
-      <div class="col-lg-12">
+      <div class="col-xl-12">
         <?= $content ?>
       </div>
     </section>
