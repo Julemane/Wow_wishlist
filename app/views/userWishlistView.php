@@ -47,8 +47,6 @@ echo '<tr class="item' . $item['itemId'] . '">'; ?>
 </div>
 <script>
 
-$(document).ready(itemStatsLoader());
-
 
 $(document).ready(function(){
 
@@ -58,14 +56,15 @@ $(document).ready(function(){
 } );
 
    $('#wishlist').DataTable({
+        "rowCallback": fillRow,
         "lengthMenu": [[5, 8], [5, 8]],
         "pagingType": "simple",
         "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
-        }
+        },
     });
-
 });
+
 
 </script>
 

@@ -13,7 +13,7 @@
     <meta property="og:description" content="Projet étudiant Openclassrooms. Application de création de listes de souhaits d'objets pour World of Warcraft" />
     <!--Vcard twitter-->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="World of Warcraft wishlis" />
+    <meta name="twitter:site" content="World of Warcraft wishlist" />
     <meta name="twitter:creator" content="Jérémy Hennebique" />
 
     <!--Favincon-->
@@ -25,6 +25,8 @@
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
     <!--Jquery 3.3.1-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

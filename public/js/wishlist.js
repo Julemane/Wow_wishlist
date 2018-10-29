@@ -9,23 +9,16 @@ function getItemsStats(itemId){
     item.send(null);
 }
 
-//Load the items detailed stats for each items in the User wishlist
-function itemStatsLoader(){
-    let itemIdElt = document.getElementsByClassName("itemId");
-    console.log([...itemIdElt]);
-  [...itemIdElt].forEach(function(elt){
-    getItemsStats(elt.innerHTML);
-  })
-}
-
 //Create Item Info on the table (itemImg, itemName)
 function wishlistItemInfo(statsItem){
 
     let item = document.getElementsByClassName("item"+statsItem.id);
     let itemDetailList = document.getElementById("itemDetailList");
-    //item[0] = current Item children[2] = 3rd col in table
+    if(!item[0]){
+      return;
+    }
+    item[0].setAttribute('data-loaded', true);
     let itemName = item[0].children[2];
-    console.log(itemName);
     let itemImg = item[0].children[0];
 
     itemName.innerHTML = statsItem.name;
@@ -35,11 +28,11 @@ function wishlistItemInfo(statsItem){
 
     //Get bonus stats on MouseOver ItemImg
     itemImg.children[0].addEventListener("mouseover",function(event){
-      ajaxGetStats(statsItem.id);
+      ajaxGetStats(statsItem.id, itemDetailList);
 
       itemDetailList.style.left = (110+event.offsetX)+ "px";
       itemDetailList.style.top = (event.pageY-400) + "px";
-      itemDetailList.style.display = "block";
+
     })
     //Mousse leaving ItemImg
     itemImg.children[0].addEventListener("mouseleave",function(){
@@ -77,4 +70,10 @@ function cleanItemStats(){
         itemStats.removeChild(itemDescription);
       }
 
+}
+function fillRow(row, data){
+  if(row.getAttribute('data-loaded') == "true"){
+    return;
+  }
+  getItemsStats(data[1]);
 }

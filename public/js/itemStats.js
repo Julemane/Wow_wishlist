@@ -16,13 +16,16 @@ const bonusStats = {
   "74":"Force ou Intelligence"
 }
 
-
-function ajaxGetStats(itemId){
+function ajaxGetStats(itemId, itemDetailList){
   let item = new XMLHttpRequest();
     item.open("GET", "https://eu.api.battle.net/wow/item/" + itemId + "?locale=fr_FR&apikey=ku2wn4dac3gcfeb7vjubk927g2bmsfn3");
     item.addEventListener("load",function () {
       const statsItem = JSON.parse(item.responseText);
       itemInfo(statsItem);
+      if(itemDetailList){
+        itemDetailList.style.display = "block";
+      }
+
     });
     item.send(null);
 }

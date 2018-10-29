@@ -71,17 +71,21 @@ display:inline;
 .table th,td {
    text-align: center;
 }
+
 footer{
   background-color:lightgray;
   font-family:lifecraftregular;
   font-size: 0.8em;
+  text-align: center;
+
 
 }
 footer p{
-  text-align: center;
+  padding-left:10px;
+  padding-right:10px;
+  margin:auto;
   padding-top:20px;
-  padding-left:10%;
-  padding-right:10%;
+
 }
 
 @media screen and (max-width: 1024px) {
