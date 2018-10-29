@@ -71,7 +71,18 @@ display:inline;
 .table th,td {
    text-align: center;
 }
+footer{
+  background-color:lightgray;
+  font-family:lifecraftregular;
+  font-size: 0.8em;
 
+}
+footer p{
+  text-align: center;
+  padding-top:20px;
+  padding-left:10%;
+  padding-right:10%;
+}
 
 @media screen and (max-width: 1024px) {
   /*fullScreen App for screen 0 to 1024px*/
