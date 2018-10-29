@@ -45,7 +45,7 @@ padding-top:15px;
 padding-bottom: 15px;
 
 }
-#register a {
+#register form{
 display:inline;
 }
 
@@ -55,6 +55,9 @@ display:inline;
   padding-top:15px;
   padding-bottom: 15px;
   justify-content: space-between;
+}
+#loggedUser form button{
+  margin-left: 5px;
 }
 
 .content{

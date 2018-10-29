@@ -25,6 +25,7 @@ function wishlistItemInfo(statsItem){
     let itemDetailList = document.getElementById("itemDetailList");
     //item[0] = current Item children[2] = 3rd col in table
     let itemName = item[0].children[2];
+    console.log(itemName);
     let itemImg = item[0].children[0];
 
     itemName.innerHTML = statsItem.name;

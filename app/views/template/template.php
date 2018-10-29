@@ -46,15 +46,15 @@
     <header class="row">
       <a href="?page=home"><img class="img-fluid" src="images/banner.jpg" alt="banniere représentant les différentes extensions de Wow"/></a>
     </header>
-    <section id="userArea" class="row d-flex align-items-center">
+    <div id="userArea" class="row d-flex align-items-center">
       <?php
       if(isset($_SESSION['nickname'])){
         ?>
           <div class="col-xl-12" id="loggedUser">
             <h2>Hello <?php echo $_SESSION['nickname']; ?></h2>
-            <div>
-              <a href="?page=wishlist"><button type="button" class="btn btn-dark">Liste de souhait</button></a>
-              <a href="?page=logout"><button type="button" class="btn btn-dark">Déconnexion</button></a>
+            <div class="form-inline" >
+              <form action="?page=wishlist" method="post"><button type="submit" class="btn btn-dark">Liste de souhait</button></form>
+              <form action="?page=logout" method="post"><button type="submit" class="btn btn-dark">Déconnexion</button></form>
             </div>
           </div>
 
@@ -64,12 +64,12 @@
         include("../app/views/include/accountCreation.php");
       }
       ?>
-    </section>
+    </div>
     <!--Dynamic Php content Area-->
-    <section class="content row">
+    <div class="content row">
       <div class="col-xl-12">
         <?= $content ?>
       </div>
-    </section>
+    </div>
   </body>
 </html>

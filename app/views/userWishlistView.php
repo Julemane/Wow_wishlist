@@ -16,7 +16,11 @@ echo '<tr class="item' . $item['itemId'] . '">'; ?>
        <td><img class='itemImg'/></td>
        <td class="itemId"><?php echo $item['itemId']; ?></td>
        <td class="itemName"></td>
-       <td><a href="?page=deleteItem&amp;itemId=<?php echo $item['itemId']; ?>"><button class="btn btn-light" type="button" onclick="return confirm('Etes vous sur de vouloir supprimer cet objet ?')">Supprimer</button></a></td>
+       <td>
+          <form action="?page=deleteItem&amp;itemId=<?php echo $item['itemId']; ?>"  method="post"
+          ><button class="btn btn-light" type="submit" onclick="return confirm('Etes vous sur de vouloir supprimer cet objet ?')">Supprimer</button>
+          </form>
+      </td>
     </tr>
     <?php
       }
@@ -45,11 +49,13 @@ echo '<tr class="item' . $item['itemId'] . '">'; ?>
 
 $(document).ready(itemStatsLoader());
 
-$.extend( true, $.fn.dataTable.defaults, {
+
+$(document).ready(function(){
+
+  $.extend( true, $.fn.dataTable.defaults, {
     "searching": false,
     "ordering": false
 } );
-$(document).ready(function(){
 
    $('#wishlist').DataTable({
         "lengthMenu": [[5, 8], [5, 8]],
