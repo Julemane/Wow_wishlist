@@ -15,6 +15,7 @@ body { background:#F2F2F2; font: 62.5% "Lucida Grande", "Lucida Sans Unicode", A
 #searchArea h1 { margin: 10px 0 10px; font-size: 24px; color: #333333; font-style:oblique; }
 #searchArea hr { color: inherit; height: 0; margin: 6px 0 6px 0; padding: 0; border: 1px solid #d9d9d9; border-style: none none solid; }
 #searchArea, #newAccountArea, #itemArea, #error, #userListArea { opacity:0.9;display: block; margin: 70px auto; padding: 35px; border: 1px solid #cbcbcb; background-color: #FFF; -moz-border-radius: 5px; -webkit-border-radius:5px; min-height:400px;}
+#userListArea{min-height:500px;}
 #newAccountArea form button {font: 1.5em "lifecraftregular", "Lucida Sans Unicode", Arial, sans-serif;}
 /* Form style */
 #searchArea label { float: left; height: 26px; line-height: 26px; width: 155px; font-size: 1.5em; }
@@ -71,20 +72,33 @@ display:inline;
 .table th,td {
    text-align: center;
 }
+/*personalisation link plugin dataTable*/
+#wishlist_paginate a {
+  display:inline-block;
+  margin:5px;
+  text-align: center;
+  padding:6px 0 6px 0;
+  font-family:lifecraftregular;
+  background:rgb(52, 58, 64);
+  color:#fff;
+  border-radius:2px;
+  width:100px;
+  border:none;
+}
 
 footer{
   background-color:lightgray;
   font-family:lifecraftregular;
   font-size: 0.8em;
   text-align: center;
-
-
 }
+
 footer p{
   padding-left:10px;
   padding-right:10px;
   margin:auto;
   padding-top:20px;
+  padding-bottom: 10px;
 
 }
 

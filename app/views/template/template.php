@@ -6,10 +6,10 @@
     <meta name="description" content="Projet étudiant Openclassrooms. Application de création de listes de souhaits d'objets pour World of Warcraft">
     <meta name="author" content="Jérémy Hennebique">
 
-    <meta property="og:image" content="http://wow-wishlist.jeremy-hennebique.com/public/images/banner.jpg" />
+    <meta property="og:image" content="http://wow-wishlist.jeremy-hennebique.com/public/images/ogImage.jpg" />
     <meta property="og:url" content="http://wow-wishlist.jeremy-hennebique.com/public/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="World of Warcraft wishlist" />
+    <meta property="og:title" content="World of Warcraft Wishlist" />
     <meta property="og:description" content="Projet étudiant Openclassrooms. Application de création de listes de souhaits d'objets pour World of Warcraft" />
     <!--Vcard twitter-->
     <meta name="twitter:card" content="summary" />

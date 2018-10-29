@@ -45,6 +45,7 @@ echo '<tr class="item' . $item['itemId'] . '">'; ?>
       <li id="itemLvlRequiered"></li>
     </ul>
 </div>
+</div>
 <script>
 
 
@@ -57,7 +58,7 @@ $(document).ready(function(){
 
    $('#wishlist').DataTable({
         "rowCallback": fillRow,
-        "lengthMenu": [[5, 8], [5, 8]],
+        "lengthMenu": [[4, 8], [4, 8]],
         "pagingType": "simple",
         "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
