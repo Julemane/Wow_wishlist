@@ -34,6 +34,7 @@ try{
                   && isset($_POST['password']) && !empty($_POST['password'])
                   && isset($_POST['password2']) && !empty($_POST['password2'])){
       createMember(htmlspecialchars($_POST['nickname']),htmlspecialchars($_POST['mail']),htmlspecialchars($_POST['password']));
+
   }else
   throw new Exception("tous les champs ne sont pas remplis !");
 

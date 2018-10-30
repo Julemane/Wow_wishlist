@@ -11,9 +11,13 @@ function createMember($nickname,$mail,$password){
     }else{
       $pushMember = new UserManager();
       $newMember = $pushMember->addMember($member->nickname, $member->mail, $member->password, $member->status);
-
+      //Member automatically logged when he create account
+      //Login the User and setting the session var
+      $member = new Member();
+      $member->memberAuth($nickname);
       $_SESSION['nickname'] = $member->nickname;
       $_SESSION['status'] = $member->status;
+      $_SESSION['member_id'] = $member->member_id;
       header('Location: ?page=home');
     }
   }
@@ -59,5 +63,5 @@ function memberLogin($nickname, $password){
 function memberLogOut(){
 
   session_destroy ();
-    header('location:index.php');
+     header('Location: ?page=home');
 }
