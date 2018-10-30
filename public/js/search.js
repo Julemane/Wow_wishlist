@@ -24,7 +24,7 @@ function itemChoice(itemName, itemId){
 
             $.ajax({
               type: 'POST',
-              url: '../app/controller/Search.php',
+              url: 'app/controller/Search.php',
               data: 'search='+$("#search").val(),
 
               beforeSend:function(){

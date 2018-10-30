@@ -3,25 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Projet étudiant Openclassrooms. Application de création de listes de souhaits d'objets pour World of Warcraft">
+    <meta name="description" content="À l'aide d'un moteur de recherche intuitif, créez votre liste de souhaits parmis des milliers d'objets du jeu World of Warcraft référencés !">
     <meta name="author" content="Jérémy Hennebique">
 
     <meta property="og:image" content="http://wow-wishlist.jeremy-hennebique.com/public/images/ogImage.jpg" />
     <meta property="og:url" content="http://wow-wishlist.jeremy-hennebique.com/public/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="World of Warcraft Wishlist" />
-    <meta property="og:description" content="Projet étudiant Openclassrooms. Application de création de listes de souhaits d'objets pour World of Warcraft" />
+    <meta property="og:description" content="À l'aide d'un moteur de recherche intuitif, créez votre liste de souhaits parmis des milliers d'objets du jeu World of Warcraft référencés !" />
     <!--Vcard twitter-->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="World of Warcraft wishlist" />
     <meta name="twitter:creator" content="Jérémy Hennebique" />
 
     <!--Favincon-->
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="public/images/favicon.png">
 
     <!--Local CSS-->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/itemStyle.css" />
+    <link rel="stylesheet" href="public/css/main.css" />
+    <link rel="stylesheet" href="public/css/itemStyle.css" />
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
@@ -34,11 +34,11 @@
     <!--Bootstrap JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
     <!--LOCAL JS-->
-    <script src="js/formControl.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/itemStats.js"></script>
-    <script src="js/wishlist.js"></script>
-    <script src="js/jquery.dataTables.js">
+    <script src="public/js/formControl.js"></script>
+    <script src="public/js/search.js"></script>
+    <script src="public/js/itemStats.js"></script>
+    <script src="public/js/wishlist.js"></script>
+    <script src="public/js/jquery.dataTables.js">
   </script>
 
     <title>WoW Wishlist</title>
@@ -46,7 +46,7 @@
   </head>
   <body class="container">
     <header class="row">
-      <a href="?page=home"><img class="img-fluid" src="images/banner.jpg" alt="banniere représentant les différentes extensions de Wow"/></a>
+      <a href="?page=home"><img class="img-fluid" src="public/images/banner.jpg" alt="banniere représentant les différentes extensions de Wow"/></a>
     </header>
     <div id="userArea" class="row d-flex align-items-center">
       <?php

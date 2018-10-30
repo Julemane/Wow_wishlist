@@ -18,7 +18,7 @@ try{
 
   elseif($page === 'itemStats'){
     if(isset($_POST['itemId'])){
-      getItemData($_POST['itemId']);
+      getItemData(htmlspecialchars($_POST['itemId']));
 
     }else{
       throw new Exception("Aucun item sélectionné ! ");
@@ -33,7 +33,7 @@ try{
                   && isset($_POST['mail']) && !empty($_POST['mail'])
                   && isset($_POST['password']) && !empty($_POST['password'])
                   && isset($_POST['password2']) && !empty($_POST['password2'])){
-      createMember($_POST['nickname'],$_POST['mail'],$_POST['password']);
+      createMember(htmlspecialchars($_POST['nickname']),htmlspecialchars($_POST['mail']),htmlspecialchars($_POST['password']));
   }else
   throw new Exception("tous les champs ne sont pas remplis !");
 
@@ -42,7 +42,7 @@ try{
     if(isset($_POST['userPassword']) && !empty($_POST['userPassword'])
       && isset($_POST['userNickname'])&& !empty($_POST['userNickname'])){
 
-        memberLogin($_POST['userNickname'],$_POST['userPassword'] );
+        memberLogin(htmlspecialchars($_POST['userNickname']),htmlspecialchars($_POST['userPassword']));
 
     }else{
       throw new Exception("tous les champs ne sont pas remplis");
@@ -52,7 +52,7 @@ try{
   elseif($page === "saveItem"){
     if(isset($_GET['itemId']) && !empty($_GET['itemId']) &&
         isset($_GET['itemName']) && !empty($_GET['itemName'])){
-      saveItem($_GET['itemId'], $_GET['itemName'], $_SESSION['member_id']);
+      saveItem(htmlspecialchars($_GET['itemId']), htmlspecialchars($_GET['itemName']), $_SESSION['member_id']);
 
     }else{
       throw new Exception("pas d'item selectionné");
