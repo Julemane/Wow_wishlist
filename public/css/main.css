@@ -35,10 +35,14 @@ body { background:#F2F2F2; font: 62.5% "Lucida Grande", "Lucida Sans Unicode", A
 #userArea{
   font-family:lifecraftregular;
   background:lightgrey;
+
 }
 #login{
 padding-top:15px;
 padding-bottom: 15px;
+}
+#register{
+  min-height: 50px;
 }
 #register p {
 display:inline;

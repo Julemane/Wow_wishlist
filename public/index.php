@@ -93,7 +93,7 @@ catch(Exception $e) {
 
     <div id="error">
         <p><?php  echo 'Erreur : ' . $e->getMessage(); ?></p>
-        <p><a href="index.php">Retour à l'accueil</a></p>
+        <p><a href="http://wow-wishlist.jeremy-hennebique.com">Retour à l'accueil</a></p>
     </div>
 
     <?php

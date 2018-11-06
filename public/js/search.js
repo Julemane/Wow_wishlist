@@ -12,7 +12,6 @@ function itemChoice(itemName, itemId){
         $('.loader').hide();
         $("#send").attr('disabled','disabled');
 
-        let timeout = null;
         $('#search').keyup(function(){
           $field = $(this);
           $('#result').html('');

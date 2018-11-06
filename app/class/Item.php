@@ -10,16 +10,13 @@ class Item{
       private $imageBaseUrl = 'https:/render-eu.worldofwarcraft.com/icons/';
       private $imageExt = '.jpg';
       private $icon;
-      private $itemQuality;
-      public $itemUrl;
 
 
       function __construct($itemId){
         $jsonConnect = new JsonConnect();
         $apiReq = $jsonConnect->getItem($itemId);
-        $this->itemUrl = $apiReq['url'];
 
-        $this->itemData = json_decode($apiReq['item'], true);
+        $this->itemData = json_decode($apiReq, true);
         $this->name = $this->itemData['name'];
         $this->description = $this->itemData['description'];
         $this->itemClass = $this->itemData['itemClass'];
