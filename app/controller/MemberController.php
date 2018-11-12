@@ -1,5 +1,18 @@
 <?php
-session_start();
+
+//Create Cookie with token key for API request
+function generateTokenCookie(){
+  $cookieToken = new TokenGenerator();
+  //Token expire every 24h - 10s
+  setcookie("userToken", $cookieToken->getToken(), time() + (86350), "/");
+  //User accept Cookie for 30 days
+  setcookie("cookieAccept", true, time() + (86400),"/" );
+}
+
+function generateTokenSession(){
+  $sessionToken = new TokenGenerator();
+  $_SESSION['token'] = $sessionToken->getToken();
+}
 
 function createMember($nickname,$mail,$password){
 

@@ -74,10 +74,19 @@
       </div>
     </div>
     <footer class="row">
+      <?php if(!isset($_COOKIE["cookieAccept"])){
+        ?>
+        <div id="cookieInfo">
+          <p>Dans le but d'optimiser le fonctionnement de l'application, j'autorise Wow-wishlist à déposer des Cookies sur ma machine pour les 30 prochains jours.</p>
+            <form action="?page=cookieAccept" method="post">
+              <input type="submit" class="btn btn-success" value="J'accepte">
+            </form>
+        </div>
+        <?php
+        }
+       ?>
       <p>World of Warcraft® and Blizzard Entertainment® are all trademarks or registered trademarks of Blizzard Entertainment in the United States and/or other countries. These terms and all related materials, logos, and images are copyright © Blizzard Entertainment. This site is in no way associated with or endorsed by Blizzard Entertainment®.</p>
       <p>Site web réalisé par <a href="http://www.jeremy-hennebique.com/" target="_blank">Jérémy Hennebique</a> dans le cadre du projet étudiant libre de la formation Openclassrooms développeur Web.</p>
-
-
     </footer>
   </body>
 </html>

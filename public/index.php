@@ -1,18 +1,37 @@
 <?php
+session_start();
 require_once('../app/class/Member.php');
 require_once('../app/class/Item.php');
+require_once('../app/class/TokenGenerator.php');
 require_once('../app/controller/ItemsController.php');
 require_once('../app/controller/MemberController.php');
+
+
+//If user dont accept cookie we use SESSION var
+if(!isset($_COOKIE["cookieAccept"]) || $_COOKIE["cookieAccept"] != true){
+    unset($_COOKIE['userToken']);//delete cookie token
+    generateTokenSession();
+//If user accept cookie and token not Set (in this case every 24h when token expire) we generate a new token
+}elseif(!isset($_COOKIE["userToken"]) && $_COOKIE["cookieAccept"] == true){
+  generateTokenCookie();
+}
 
 if(isset($_GET['page'])){
     $page = $_GET['page'];
   }else{
     $page = 'home';
   }
-
 try{
 
-  if($page === 'home'){
+  if($page === 'cookieAccept'){
+    if(!isset($_COOKIE["userToken"])){
+    generateTokenCookie();
+    unset($_SESSION['token']);
+    }
+    header('Location: ?page=home');
+
+  }
+  elseif($page === 'home'){
       require'../app/views/home.php';
   }
 
