@@ -97,13 +97,15 @@ footer{
   text-align: center;
 }
 
-footer p{
+footer p,#cookieInfo{
   padding-left:10px;
   padding-right:10px;
   margin:auto;
   padding-top:20px;
   padding-bottom: 10px;
-
+}
+#tokenId{
+  display:none;
 }
 
 @media screen and (max-width: 1024px) {

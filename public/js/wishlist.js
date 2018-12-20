@@ -1,7 +1,9 @@
 
 function getItemsStats(itemId){
+  let tokenVal = getToken();
+
   let item = new XMLHttpRequest();
-    item.open("GET", "https://eu.api.battle.net/wow/item/" + itemId + "?locale=fr_FR&apikey=ku2wn4dac3gcfeb7vjubk927g2bmsfn3");
+    item.open("GET", "https://EU.api.blizzard.com/wow/item/"+ itemId + "?locale=fr_FR&access_token=" + tokenVal);
     item.addEventListener("load",function () {
       const statsItem = JSON.parse(item.responseText);
       wishlistItemInfo(statsItem);

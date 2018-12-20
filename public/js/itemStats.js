@@ -16,16 +16,24 @@ const bonusStats = {
   "74":"Force ou Intelligence"
 }
 
+function getToken(){
+  let tokenElt = document.getElementById('tokenId');
+  let tokenValue = tokenElt.innerHTML;
+  //removes whitespace on the string with trim
+  return tokenValue.trim();
+}
+
 function ajaxGetStats(itemId, itemDetailList){
+  let tokenVal = getToken();
+
   let item = new XMLHttpRequest();
-    item.open("GET", "https://eu.api.battle.net/wow/item/" + itemId + "?locale=fr_FR&apikey=ku2wn4dac3gcfeb7vjubk927g2bmsfn3");
+    item.open("GET", "https://EU.api.blizzard.com/wow/item/"+ itemId + "?locale=fr_FR&access_token=" + tokenVal);
     item.addEventListener("load",function () {
       const statsItem = JSON.parse(item.responseText);
       itemInfo(statsItem);
       if(itemDetailList){
         itemDetailList.style.display = "block";
       }
-
     });
     item.send(null);
 }
