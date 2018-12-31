@@ -98,10 +98,5 @@
       }
       ?>
     </div>
-    <script>
-      $(document).ready(function(){
-        getToken();
-      });
-    </script>
   </body>
 </html>

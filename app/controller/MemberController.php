@@ -3,7 +3,6 @@
 //Create Cookie with token key for API request
 function generateTokenCookie(){
   $cookieToken = new TokenGenerator();
-  var_dump($cookieToken);
   //Token expire every 24h - 10s
   setcookie("userToken", $cookieToken->getToken(), time() + (86350), "/");
   //User accept Cookie for 30 days

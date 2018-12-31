@@ -16,6 +16,7 @@ const bonusStats = {
   "74":"Force ou Intelligence"
 }
 
+//get the user token generate in PHP
 function getToken(){
   let tokenElt = document.getElementById('tokenId');
   let tokenValue = tokenElt.innerHTML;
