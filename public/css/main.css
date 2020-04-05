@@ -10,7 +10,20 @@
 
 html, body { border: 0; margin: 0; padding: 0; }
 body { background:#F2F2F2; font: 62.5% "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; color: #666;cursor: url('../images/wow_cursors.cur'), pointer; }
+#noty-holder{
+    width: 100%;
+    top: 0;
+    font-weight: bold;
+    z-index: 1031; /* Max Z-Index in Fixed Nav Menu is 1030*/
+    text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+}
 
+.alert{
+    margin-bottom: 2px;
+    border-radius: 0px;
+}
 #searchArea p, label, legend { font: 1.5em "lifecraftregular", "Lucida Sans Unicode", Arial, sans-serif; }
 #searchArea h1 { margin: 10px 0 10px; font-size: 24px; color: #333333; font-style:oblique; }
 #searchArea hr { color: inherit; height: 0; margin: 6px 0 6px 0; padding: 0; border: 1px solid #d9d9d9; border-style: none none solid; }

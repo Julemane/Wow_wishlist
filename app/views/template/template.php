@@ -40,13 +40,15 @@
     <script src="public/js/wishlist.js"></script>
     <script src="public/js/jquery.dataTables.js">
   </script>
+  <script src="public/js/banner.js"></script>
 
     <title>WoW Wishlist</title>
-
   </head>
   <body class="container">
     <header class="row">
+      <div id="noty-holder">
       <a href="?page=home"><img class="img-fluid" src="public/images/banner.jpg" alt="banniere représentant les différentes extensions de Wow"/></a>
+      </div>
     </header>
     <div id="userArea" class="row d-flex align-items-center">
       <?php
