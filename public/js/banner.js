@@ -18,7 +18,7 @@ function checkSession(){
     }
 };
 
-let message = "Depuis le 16/03/2020 la community API battle.net a été déprécié, les fonctionnalités de cette application basés sur cette API ne sont plus fonctionnelles";
+let message = "Depuis le 16/03/2020 la community API battle.net a été déprécié, les fonctionnalités de Wow-Wishlist basées sur cette API ne sont plus fonctionnelles";
 $(function(){
     checkSession();
     createNoty(message, 'warning');
